@@ -1,0 +1,173 @@
+/* General styles */
+.wrapper {
+  width: 100%;
+  max-width: 600px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+  margin: 80px auto 0;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 16px;
+  color: #fff;
+  padding: 15px 20px;
+  outline: none;
+}
+
+.input-box input {
+  height: 50px;
+}
+
+.input-box textarea {
+  height: 150px;
+  resize: vertical;
+  min-height: 150px;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-box textarea + .icon {
+  top: 20px;
+  transform: none;
+}
+
+.icon-left {
+  margin-right: 8px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.wrapper button {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+button .icon-left {
+  vertical-align: middle;
+}
+
+.wrapper button:hover {
+  background-color: #f0f0f0;
+}
+
+.message {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #4caf50;
+}
+
+/* Specific styles for AskDoubts */
+.ask-doubts-wrapper form {
+  flex-grow: 1;
+}
+
+.ask-doubts-wrapper .input-box:last-of-type {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ask-doubts-wrapper textarea {
+  flex-grow: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .wrapper h1 {
+    font-size: 28px;
+  }
+
+  .input-box input,
+  .input-box textarea {
+    font-size: 14px;
+  }
+}
+
+/* Home screen styles */
+.home-content {
+  padding: 20px;
+  word-break: break-word;
+}
+
+.home-content p {
+  margin-bottom: 20px;
+}
+
+.home-content span {
+  margin-left: 20px;
+}
+
+.home-content .user-email {
+  font-size: 18px;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
