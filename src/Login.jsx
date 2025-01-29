@@ -3,7 +3,7 @@ import app from "./firebase"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import { useNavigate } from "react-router-dom"
 import NavBar from "./Navbar"
-import { FaEye, FaEyeSlash } from "react-icons/fa" // Import icons
+import { FaEye, FaEyeSlash } from "react-icons/fa" 
 import "./Login.css"
 
 function Login() {
