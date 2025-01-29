@@ -31,17 +31,26 @@ function Login() {
     setPassword(e.target.value)
   }
 
-  const save = (e) => {
+  const save = async (e) => {
     e.preventDefault()
     const auth = getAuth(app)
-    signInWithEmailAndPassword(auth, username, password)
-      .then((res) => {
-        localStorage.setItem("un", username)
-        nav("/home")
-      })
-      .catch((err) => {
-        setMsg("Issue: " + err.message)
-      })
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, username, password)
+      const user = userCredential.user
+      
+      if (!user.emailVerified) {
+        await auth.signOut()
+        setMsg("Please verify your email before logging in. Check your inbox for the verification link.")
+        setPassword("")
+        return
+      }
+
+      localStorage.setItem("un", username)
+      nav("/home")
+    } catch (err) {
+      setMsg("Issue: " + err.message)
+      setPassword("")
+    }
   }
 
   return (
@@ -77,6 +86,7 @@ function Login() {
           </div>
           <button type="submit">Login</button>
         </form>
+        <br />
         {msg && <p className="error-message">{msg}</p>}
       </div>
     </>
@@ -84,4 +94,3 @@ function Login() {
 }
 
 export default Login
-

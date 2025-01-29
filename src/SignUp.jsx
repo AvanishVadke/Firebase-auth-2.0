@@ -36,7 +36,7 @@ function SignUp() {
   const validatePassword = (password) =>
     /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/.test(password)
 
-  const save = (e) => {
+  const save = async (e) => {
     e.preventDefault()
   
     if (!validateEmail(username)) {
@@ -67,25 +67,29 @@ function SignUp() {
     }
   
     const auth = getAuth(app)
-    createUserWithEmailAndPassword(auth, username, password1)
-      .then((userCredential) => {
-        const user = userCredential.user
-        sendEmailVerification(user)
-          .then(() => {
-            setMsg("A verification email has been sent. Please check your inbox.")
-            setUsername("")
-            setPassword1("")
-            setPassword2("")
-          })
-          .catch((err) => {
-            setMsg("Error sending verification email: " + err.message)
-          })
-      })
-      .catch((err) => {
-        setMsg("Error: " + err.message)
-      })
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, username, password1)
+      const user = userCredential.user
+      
+      await sendEmailVerification(user)
+      setMsg("A verification email has been sent. Please verify your email before logging in.")
+      
+      // Sign out the user immediately after registration
+      await auth.signOut()
+      
+    
+      setUsername("")
+      setPassword1("")
+      setPassword2("")
+      
+      // Redirect to login page after a short delay
+      setTimeout(() => {
+        nav("/login")
+      }, 3000)
+    } catch (err) {
+      setMsg("Error: " + err.message)
+    }
   }
-  
 
   return (
     <>
@@ -142,4 +146,3 @@ function SignUp() {
 }
 
 export default SignUp
-
