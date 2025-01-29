@@ -1,6 +1,6 @@
 import NavBar from "./Navbar"
 import { useRef, useEffect, useState } from "react"
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth"
 import { useNavigate } from "react-router-dom"
 import { FaEye, FaEyeSlash } from "react-icons/fa"
 import app from "./firebase"
@@ -38,17 +38,17 @@ function SignUp() {
 
   const save = (e) => {
     e.preventDefault()
-
+  
     if (!validateEmail(username)) {
       alert("Invalid email format. Please use a valid email address.")
       setMsg("")
       rUsername.current.focus()
       return
     }
-
+  
     if (!validatePassword(password1)) {
       alert(
-        "Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character.",
+        "Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character."
       )
       setMsg("")
       setPassword1("")
@@ -56,7 +56,7 @@ function SignUp() {
       rPassword1.current.focus()
       return
     }
-
+  
     if (password1 !== password2) {
       alert("Passwords do not match.")
       setMsg("")
@@ -65,16 +65,27 @@ function SignUp() {
       rPassword1.current.focus()
       return
     }
-
+  
     const auth = getAuth(app)
     createUserWithEmailAndPassword(auth, username, password1)
-      .then(() => {
-        nav("/login")
+      .then((userCredential) => {
+        const user = userCredential.user
+        sendEmailVerification(user)
+          .then(() => {
+            setMsg("A verification email has been sent. Please check your inbox.")
+            setUsername("")
+            setPassword1("")
+            setPassword2("")
+          })
+          .catch((err) => {
+            setMsg("Error sending verification email: " + err.message)
+          })
       })
       .catch((err) => {
         setMsg("Error: " + err.message)
       })
   }
+  
 
   return (
     <>
