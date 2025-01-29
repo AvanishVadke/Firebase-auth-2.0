@@ -20,7 +20,9 @@ function About() {
       <NavBar />
       <div className="wrapper">
         <h1>About {username}</h1>
-        {/* Add more content here if needed */}
+        <p>
+          This is a simple authentication system using Firebase Auth and React.
+        </p>
       </div>
     </>
   )
