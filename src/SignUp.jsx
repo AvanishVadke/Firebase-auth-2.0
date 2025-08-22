@@ -1,9 +1,9 @@
 import NavBar from "./Navbar"
 import { useRef, useEffect, useState } from "react"
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, signInWithPopup } from "firebase/auth"
 import { useNavigate } from "react-router-dom"
-import { FaEye, FaEyeSlash } from "react-icons/fa"
-import app from "./firebase"
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa"
+import app, { googleProvider } from "./firebase"
 import "./Login.css"
 
 function SignUp() {
@@ -91,6 +91,18 @@ function SignUp() {
     }
   }
 
+  const handleGoogleSignIn = async () => {
+    const auth = getAuth(app)
+    try {
+      const result = await signInWithPopup(auth, googleProvider)
+      const user = result.user
+      localStorage.setItem("un", user.email)
+      nav("/home")
+    } catch (err) {
+      setMsg("Google Sign-in Error: " + err.message)
+    }
+  }
+
   return (
     <>
       <NavBar />
@@ -139,6 +151,16 @@ function SignUp() {
           </div>
           <button type="submit">Sign Up</button>
         </form>
+        
+        <div className="separator">
+          <span>OR</span>
+        </div>
+        
+        <button type="button" className="google-signin-btn" onClick={handleGoogleSignIn}>
+          <FaGoogle className="icon-left" />
+          Sign up with Google
+        </button>
+        
         {msg && <p className="error-message">{msg}</p>}
       </div>
     </>
