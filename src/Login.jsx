@@ -1,9 +1,10 @@
 import { useRef, useEffect, useState } from "react"
 import app from "./firebase"
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
-import { useNavigate } from "react-router-dom"
+import { getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
+import { googleProvider } from "./firebase"
+import { useNavigate, Link } from "react-router-dom"
 import NavBar from "./Navbar"
-import { FaEye, FaEyeSlash } from "react-icons/fa" 
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa" 
 import "./Login.css"
 
 function Login() {
@@ -53,6 +54,18 @@ function Login() {
     }
   }
 
+  const handleGoogleSignIn = async () => {
+    const auth = getAuth(app)
+    try {
+      const result = await signInWithPopup(auth, googleProvider)
+      const user = result.user
+      localStorage.setItem("un", user.email)
+      nav("/home")
+    } catch (err) {
+      setMsg("Google Sign-in Error: " + err.message)
+    }
+  }
+
   return (
     <>
       <NavBar />
@@ -86,6 +99,20 @@ function Login() {
           </div>
           <button type="submit">Login</button>
         </form>
+        
+        <div className="separator">
+          <span>OR</span>
+        </div>
+        
+        <button type="button" className="google-signin-btn" onClick={handleGoogleSignIn}>
+          <FaGoogle className="icon-left" />
+          Sign in with Google
+        </button>
+        
+        <div className="forgot-password-link">
+          <Link to="/fp">Forgot Password?</Link>
+        </div>
+        
         <br />
         {msg && <p className="error-message">{msg}</p>}
       </div>
