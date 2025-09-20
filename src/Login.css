@@ -269,3 +269,254 @@ button .icon-left {
   max-width: 100%;
   overflow-wrap: break-word;
 }
+
+/* Enhanced Home Dashboard Styles */
+.home-dashboard {
+  max-width: 1200px;
+  width: 100%;
+  padding: 30px;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.welcome-section h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.user-icon {
+  font-size: 24px;
+  color: #667eea;
+}
+
+.user-email {
+  font-size: 18px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.section-icon {
+  font-size: 28px;
+  color: #667eea;
+}
+
+.resource-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.resource-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.resource-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px);
+  text-decoration: none;
+  color: #fff;
+}
+
+.resource-icon {
+  font-size: 24px;
+}
+
+.external-icon {
+  margin-left: auto;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.tools-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tool-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px);
+  text-decoration: none;
+  color: #fff;
+}
+
+.tool-icon {
+  font-size: 32px;
+  color: #667eea;
+}
+
+.tool-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.tool-info p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.tech-tips {
+  grid-column: 1 / -1;
+}
+
+.tips-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.tip-item {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border-left: 4px solid #667eea;
+  transition: transform 0.3s ease;
+}
+
+.tip-item:hover {
+  transform: translateY(-3px);
+}
+
+.tip-item strong {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.logout-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+}
+
+.logout-icon {
+  font-size: 18px;
+}
+
+/* Responsive Design for Home Dashboard */
+@media (max-width: 768px) {
+  .home-dashboard {
+    padding: 20px;
+  }
+  
+  .welcome-section h1 {
+    font-size: 28px;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .dashboard-card {
+    padding: 20px;
+  }
+  
+  .tips-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .tool-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .tool-info {
+    text-align: center;
+  }
+}

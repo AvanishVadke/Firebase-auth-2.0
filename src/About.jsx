@@ -1,17 +1,14 @@
 import NavBar from "./Navbar"
 import { useNavigate } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import "./Login.css"
 
 function About() {
   const nav = useNavigate()
-  const [username, setUsername] = useState("")
 
   useEffect(() => {
     const un = localStorage.getItem("un")
-    if (un !== null) {
-      setUsername(un)
-    } else {
+    if (un === null) {
       nav("/login")
     }
   }, [nav])
@@ -20,7 +17,7 @@ function About() {
     <>
       <NavBar />
       <div className="wrapper">
-        <h1>About {username}</h1>
+        <h1>About Avanish</h1>
         <h2>Technical Skills</h2>
         <p>
           I am passionate about developing full-stack applications with a focus on
