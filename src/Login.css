@@ -428,6 +428,108 @@ button .icon-left {
   margin: 0;
 }
 
+/* Daily Insights Section */
+.daily-insights {
+  grid-column: 1 / -1;
+}
+
+.insights-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.insights-header h2 {
+  margin-bottom: 0;
+}
+
+.refresh-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(180deg);
+}
+
+.insights-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.insight-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.insight-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.insight-icon {
+  font-size: 20px;
+  color: #667eea;
+}
+
+.tip-card {
+  border-left: 4px solid #4CAF50;
+}
+
+.faq-card {
+  border-left: 4px solid #2196F3;
+}
+
+.category-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tip-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  color: #fff;
+}
+
+.faq-question {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.faq-answer {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .tech-tips {
   grid-column: 1 / -1;
 }
@@ -455,36 +557,34 @@ button .icon-left {
   font-weight: 600;
 }
 
-.logout-section {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.logout-btn {
+/* Navbar Logout Button Styles */
+.logout-nav-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 15px 30px;
+  gap: 8px;
   background: linear-gradient(135deg, #ff6b6b, #ee5a24);
   color: white;
   border: none;
-  border-radius: 25px;
-  font-size: 16px;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  text-decoration: none;
+  margin-left: 10px;
 }
 
-.logout-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+.logout-nav-btn:hover {
   background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+  color: white;
+  text-decoration: none;
 }
 
-.logout-icon {
-  font-size: 18px;
+.logout-nav-icon {
+  font-size: 14px;
 }
 
 /* Responsive Design for Home Dashboard */
@@ -510,6 +610,10 @@ button .icon-left {
     grid-template-columns: 1fr;
   }
   
+  .insights-content {
+    grid-template-columns: 1fr;
+  }
+  
   .tool-card {
     flex-direction: column;
     text-align: center;
@@ -518,5 +622,16 @@ button .icon-left {
   
   .tool-info {
     text-align: center;
+  }
+  
+  .insights-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .logout-nav-btn {
+    margin-left: 0;
+    margin-top: 10px;
   }
 }

@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { FaSignOutAlt, FaUser, FaReact, FaNodeJs, FaGithub, FaCode, FaBook, FaTools, FaExternalLinkAlt } from "react-icons/fa"
+import { FaUser, FaReact, FaNodeJs, FaGithub, FaCode, FaBook, FaTools, FaExternalLinkAlt, FaLightbulb, FaQuestionCircle, FaRedo } from "react-icons/fa"
 import { SiFirebase, SiMongodb, SiJavascript, SiTailwindcss } from "react-icons/si"
 import NavBar from "./Navbar"
+import devTipsData from "./devTipsData.json"
 import "./Login.css"
 
 function Home() {
   const nav = useNavigate()
   const [username, setUsername] = useState("")
+  const [currentTip, setCurrentTip] = useState(null)
+  const [currentFaq, setCurrentFaq] = useState(null)
 
   useEffect(() => {
     const un = localStorage.getItem("un")
@@ -16,12 +19,25 @@ function Home() {
     } else {
       nav("/login")
     }
+    
+    // Load random tip and FAQ on component mount
+    loadRandomTip()
+    loadRandomFaq()
   }, [nav])
 
-  const lo = (e) => {
-    e.preventDefault()
-    localStorage.removeItem("un")
-    nav("/login")
+  const loadRandomTip = () => {
+    const randomIndex = Math.floor(Math.random() * devTipsData.tips.length)
+    setCurrentTip(devTipsData.tips[randomIndex])
+  }
+
+  const loadRandomFaq = () => {
+    const randomIndex = Math.floor(Math.random() * devTipsData.faqs.length)
+    setCurrentFaq(devTipsData.faqs[randomIndex])
+  }
+
+  const refreshTipsAndFaqs = () => {
+    loadRandomTip()
+    loadRandomFaq()
   }
 
   const techResources = [
@@ -96,8 +112,35 @@ function Home() {
               </div>
             </div>
 
+            <div className="dashboard-card daily-insights">
+              <div className="insights-header">
+                <h2><FaLightbulb className="section-icon" />Daily Dev Insights</h2>
+                <button className="refresh-btn" onClick={refreshTipsAndFaqs}>
+                  <FaRedo />
+                </button>
+              </div>
+              
+              <div className="insights-content">
+                {currentTip && (
+                  <div className="insight-card tip-card">
+                    <h3><FaLightbulb className="insight-icon" />Tip of the Day</h3>
+                    <div className="category-badge">{currentTip.category}</div>
+                    <p>{currentTip.tip}</p>
+                  </div>
+                )}
+                
+                {currentFaq && (
+                  <div className="insight-card faq-card">
+                    <h3><FaQuestionCircle className="insight-icon" />FAQ</h3>
+                    <div className="faq-question">{currentFaq.question}</div>
+                    <div className="faq-answer">{currentFaq.answer}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+
             <div className="dashboard-card tech-tips">
-              <h2><FaCode className="section-icon" />Tech Tips</h2>
+              <h2><FaCode className="section-icon" />Essential Tips</h2>
               <div className="tips-list">
                 <div className="tip-item">
                   <strong>React Best Practice:</strong> Use React.memo() for performance optimization
@@ -113,13 +156,6 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="logout-section">
-            <button className="logout-btn" onClick={lo}>
-              <FaSignOutAlt className="logout-icon" />
-              Logout
-            </button>
           </div>
         </div>
       </div>

@@ -1,0 +1,466 @@
+{
+  "tips": [
+    {
+      "category": "React",
+      "tip": "Use React.memo() to prevent unnecessary re-renders of functional components."
+    },
+    {
+      "category": "React",
+      "tip": "UseCallback and useMemo hooks help optimize performance by memoizing functions and values."
+    },
+    {
+      "category": "React",
+      "tip": "Always use keys when rendering lists to help React identify which items have changed."
+    },
+    {
+      "category": "React",
+      "tip": "Use the useEffect cleanup function to prevent memory leaks when components unmount."
+    },
+    {
+      "category": "React",
+      "tip": "Prefer functional components with hooks over class components for better performance."
+    },
+    {
+      "category": "JavaScript",
+      "tip": "Use async/await instead of .then() chains for cleaner asynchronous code."
+    },
+    {
+      "category": "JavaScript",
+      "tip": "Destructuring can make your code more readable: const { name, age } = user;"
+    },
+    {
+      "category": "JavaScript",
+      "tip": "Use template literals for string interpolation: `Hello ${name}!`"
+    },
+    {
+      "category": "JavaScript",
+      "tip": "Array methods like map(), filter(), and reduce() are more functional than for loops."
+    },
+    {
+      "category": "JavaScript",
+      "tip": "Use strict equality (===) instead of loose equality (==) to avoid type coercion."
+    },
+    {
+      "category": "CSS",
+      "tip": "Use CSS Grid for 2D layouts and Flexbox for 1D layouts."
+    },
+    {
+      "category": "CSS",
+      "tip": "Use CSS custom properties (variables) for consistent theming: --main-color: #333;"
+    },
+    {
+      "category": "CSS",
+      "tip": "Mobile-first responsive design is easier to maintain than desktop-first."
+    },
+    {
+      "category": "CSS",
+      "tip": "Use rem units for font sizes and em units for margins/padding for better scalability."
+    },
+    {
+      "category": "CSS",
+      "tip": "CSS transforms and transitions are GPU-accelerated for smoother animations."
+    },
+    {
+      "category": "Firebase",
+      "tip": "Use Firebase Security Rules to protect your database from unauthorized access."
+    },
+    {
+      "category": "Firebase",
+      "tip": "Firestore offline persistence allows your app to work without internet connection."
+    },
+    {
+      "category": "Firebase",
+      "tip": "Use Firebase Hosting for fast and secure static site hosting with CDN."
+    },
+    {
+      "category": "Firebase",
+      "tip": "Firebase Cloud Functions let you run backend code without managing servers."
+    },
+    {
+      "category": "Firebase",
+      "tip": "Use onSnapshot() for real-time data updates in Firestore."
+    },
+    {
+      "category": "Node.js",
+      "tip": "Use environment variables to store sensitive configuration data."
+    },
+    {
+      "category": "Node.js",
+      "tip": "Always handle errors in async functions with try-catch blocks."
+    },
+    {
+      "category": "Node.js",
+      "tip": "Use npm scripts in package.json to automate common tasks."
+    },
+    {
+      "category": "Node.js",
+      "tip": "Use nodemon for automatic server restarts during development."
+    },
+    {
+      "category": "Node.js",
+      "tip": "Express middleware functions run in the order they are defined."
+    },
+    {
+      "category": "Git",
+      "tip": "Write meaningful commit messages that explain what and why, not just what."
+    },
+    {
+      "category": "Git",
+      "tip": "Use 'git stash' to temporarily save changes when switching branches."
+    },
+    {
+      "category": "Git",
+      "tip": "Create feature branches for new functionality: git checkout -b feature/new-feature"
+    },
+    {
+      "category": "Git",
+      "tip": "Use 'git rebase' instead of merge for a cleaner commit history."
+    },
+    {
+      "category": "Git",
+      "tip": "Use .gitignore to exclude files that shouldn't be tracked in version control."
+    },
+    {
+      "category": "Performance",
+      "tip": "Lazy loading images and components can significantly improve page load times."
+    },
+    {
+      "category": "Performance",
+      "tip": "Minimize HTTP requests by bundling CSS and JavaScript files."
+    },
+    {
+      "category": "Performance",
+      "tip": "Use a Content Delivery Network (CDN) to serve static assets faster."
+    },
+    {
+      "category": "Performance",
+      "tip": "Compress images using modern formats like WebP for better performance."
+    },
+    {
+      "category": "Performance",
+      "tip": "Use browser caching headers to reduce repeat downloads of static resources."
+    },
+    {
+      "category": "Security",
+      "tip": "Never store sensitive data like passwords or API keys in client-side code."
+    },
+    {
+      "category": "Security",
+      "tip": "Use HTTPS everywhere to protect data in transit."
+    },
+    {
+      "category": "Security",
+      "tip": "Validate and sanitize all user inputs to prevent injection attacks."
+    },
+    {
+      "category": "Security",
+      "tip": "Use Content Security Policy (CSP) headers to prevent XSS attacks."
+    },
+    {
+      "category": "Security",
+      "tip": "Keep your dependencies updated to avoid known security vulnerabilities."
+    },
+    {
+      "category": "HTML",
+      "tip": "Use semantic HTML elements like <nav>, <main>, <article> for better accessibility."
+    },
+    {
+      "category": "HTML",
+      "tip": "Always include alt attributes for images for screen reader accessibility."
+    },
+    {
+      "category": "HTML",
+      "tip": "Use proper heading hierarchy (h1, h2, h3) for better SEO and accessibility."
+    },
+    {
+      "category": "HTML",
+      "tip": "The <meta name='viewport'> tag is essential for responsive design."
+    },
+    {
+      "category": "HTML",
+      "tip": "Use ARIA labels and roles to improve accessibility for screen readers."
+    },
+    {
+      "category": "Testing",
+      "tip": "Write tests that focus on behavior, not implementation details."
+    },
+    {
+      "category": "Testing",
+      "tip": "Use descriptive test names that explain what is being tested."
+    },
+    {
+      "category": "Testing",
+      "tip": "Test edge cases and error conditions, not just the happy path."
+    },
+    {
+      "category": "Testing",
+      "tip": "Mock external dependencies to make tests faster and more reliable."
+    },
+    {
+      "category": "Testing",
+      "tip": "Use test-driven development (TDD) to write better, more maintainable code."
+    },
+    {
+      "category": "MongoDB",
+      "tip": "Use indexes to speed up database queries, especially on frequently queried fields."
+    },
+    {
+      "category": "MongoDB",
+      "tip": "Use aggregation pipelines for complex data transformations."
+    },
+    {
+      "category": "MongoDB",
+      "tip": "Always validate data before inserting it into the database."
+    },
+    {
+      "category": "MongoDB",
+      "tip": "Use connection pooling to efficiently manage database connections."
+    },
+    {
+      "category": "MongoDB",
+      "tip": "Use projection to only fetch the fields you need, reducing network traffic."
+    },
+    {
+      "category": "API Design",
+      "tip": "Use RESTful conventions: GET for reading, POST for creating, PUT for updating."
+    },
+    {
+      "category": "API Design",
+      "tip": "Version your APIs to maintain backward compatibility: /api/v1/users"
+    },
+    {
+      "category": "API Design",
+      "tip": "Use proper HTTP status codes: 200 for success, 404 for not found, 500 for errors."
+    },
+    {
+      "category": "API Design",
+      "tip": "Include rate limiting to prevent abuse of your API."
+    },
+    {
+      "category": "API Design",
+      "tip": "Use pagination for endpoints that return large datasets."
+    },
+    {
+      "category": "DevOps",
+      "tip": "Use environment-specific configuration files for different deployment stages."
+    },
+    {
+      "category": "DevOps",
+      "tip": "Implement CI/CD pipelines to automate testing and deployment."
+    },
+    {
+      "category": "DevOps",
+      "tip": "Use containerization (Docker) for consistent development and production environments."
+    },
+    {
+      "category": "DevOps",
+      "tip": "Monitor your applications with logging and alerting systems."
+    },
+    {
+      "category": "DevOps",
+      "tip": "Use blue-green deployments to minimize downtime during updates."
+    },
+    {
+      "category": "TypeScript",
+      "tip": "Use TypeScript interfaces to define the shape of your data structures."
+    },
+    {
+      "category": "TypeScript",
+      "tip": "Enable strict mode in TypeScript for better type checking."
+    },
+    {
+      "category": "TypeScript",
+      "tip": "Use union types for values that can be one of several types: string | number"
+    },
+    {
+      "category": "TypeScript",
+      "tip": "Use generics to create reusable components with type safety."
+    },
+    {
+      "category": "TypeScript",
+      "tip": "Use readonly modifier for properties that shouldn't be modified after creation."
+    },
+    {
+      "category": "Code Quality",
+      "tip": "Use ESLint and Prettier for consistent code formatting and style."
+    },
+    {
+      "category": "Code Quality",
+      "tip": "Follow the DRY principle: Don't Repeat Yourself."
+    },
+    {
+      "category": "Code Quality",
+      "tip": "Write self-documenting code with descriptive variable and function names."
+    },
+    {
+      "category": "Code Quality",
+      "tip": "Keep functions small and focused on a single responsibility."
+    },
+    {
+      "category": "Code Quality",
+      "tip": "Use consistent naming conventions throughout your codebase."
+    },
+    {
+      "category": "Debugging",
+      "tip": "Use browser developer tools to inspect and debug your code."
+    },
+    {
+      "category": "Debugging",
+      "tip": "Add console.log() statements strategically to trace code execution."
+    },
+    {
+      "category": "Debugging",
+      "tip": "Use debugger; statement to set breakpoints in your code."
+    },
+    {
+      "category": "Debugging",
+      "tip": "Check the network tab to debug API calls and responses."
+    },
+    {
+      "category": "Debugging",
+      "tip": "Use error boundaries in React to catch and handle component errors gracefully."
+    },
+    {
+      "category": "Web Development",
+      "tip": "Use progressive enhancement: start with basic functionality, then add advanced features."
+    },
+    {
+      "category": "Web Development",
+      "tip": "Optimize for mobile first, then enhance for larger screens."
+    },
+    {
+      "category": "Web Development",
+      "tip": "Use service workers to enable offline functionality and faster loading."
+    },
+    {
+      "category": "Web Development",
+      "tip": "Minimize the use of third-party libraries to reduce bundle size."
+    },
+    {
+      "category": "Web Development",
+      "tip": "Use semantic versioning (semver) for your project releases."
+    },
+    {
+      "category": "Database",
+      "tip": "Always backup your database before making schema changes."
+    },
+    {
+      "category": "Database",
+      "tip": "Use database transactions for operations that must complete atomically."
+    },
+    {
+      "category": "Database",
+      "tip": "Normalize your data to reduce redundancy and improve consistency."
+    },
+    {
+      "category": "Database",
+      "tip": "Use database constraints to enforce data integrity rules."
+    },
+    {
+      "category": "Database",
+      "tip": "Monitor database performance and optimize slow queries."
+    },
+    {
+      "category": "Frontend",
+      "tip": "Use a CSS reset or normalize.css for consistent styling across browsers."
+    },
+    {
+      "category": "Frontend",
+      "tip": "Optimize images for the web using appropriate formats and compression."
+    },
+    {
+      "category": "Frontend",
+      "tip": "Use CSS animations instead of JavaScript for simple transitions."
+    },
+    {
+      "category": "Frontend",
+      "tip": "Implement loading states to improve perceived performance."
+    },
+    {
+      "category": "Frontend",
+      "tip": "Use CSS Grid for complex layouts and Flexbox for simpler alignments."
+    },
+    {
+      "category": "Backend",
+      "tip": "Use middleware to handle cross-cutting concerns like authentication and logging."
+    },
+    {
+      "category": "Backend",
+      "tip": "Implement proper error handling and return meaningful error messages."
+    },
+    {
+      "category": "Backend",
+      "tip": "Use connection pooling for database connections to improve performance."
+    },
+    {
+      "category": "Backend",
+      "tip": "Implement caching strategies to reduce database load and improve response times."
+    },
+    {
+      "category": "Backend",
+      "tip": "Use environment variables for configuration instead of hardcoding values."
+    },
+    {
+      "category": "Learning",
+      "tip": "Build projects to practice new technologies and concepts you learn."
+    },
+    {
+      "category": "Learning",
+      "tip": "Read other people's code to learn different approaches and patterns."
+    },
+    {
+      "category": "Learning",
+      "tip": "Contribute to open source projects to gain real-world experience."
+    },
+    {
+      "category": "Learning",
+      "tip": "Stay updated with the latest trends and best practices in web development."
+    },
+    {
+      "category": "Learning",
+      "tip": "Join developer communities and forums to connect with other developers."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What's the difference between let, const, and var in JavaScript?",
+      "answer": "var is function-scoped and can be redeclared, let is block-scoped and can be reassigned, const is block-scoped and cannot be reassigned."
+    },
+    {
+      "question": "When should I use React hooks vs class components?",
+      "answer": "Use hooks with functional components for new development. They're simpler, have better performance, and are the recommended approach by React team."
+    },
+    {
+      "question": "What's the difference between SQL and NoSQL databases?",
+      "answer": "SQL databases use structured tables with relationships, while NoSQL databases store data in flexible formats like documents, key-value pairs, or graphs."
+    },
+    {
+      "question": "How do I handle errors in async/await functions?",
+      "answer": "Use try-catch blocks around your await statements to handle both promise rejections and synchronous errors."
+    },
+    {
+      "question": "What's the difference between authentication and authorization?",
+      "answer": "Authentication verifies who a user is (login), while authorization determines what they're allowed to access (permissions)."
+    },
+    {
+      "question": "Why should I use TypeScript instead of JavaScript?",
+      "answer": "TypeScript adds static type checking, better IDE support, early error detection, and improved code documentation."
+    },
+    {
+      "question": "What's the difference between GET and POST HTTP methods?",
+      "answer": "GET requests data from a server (idempotent), while POST sends data to create or update resources (not idempotent)."
+    },
+    {
+      "question": "How do I optimize website performance?",
+      "answer": "Optimize images, minify CSS/JS, use CDNs, enable gzip compression, lazy load content, and minimize HTTP requests."
+    },
+    {
+      "question": "What's the difference between margin and padding in CSS?",
+      "answer": "Margin is the space outside an element's border, while padding is the space inside an element's border."
+    },
+    {
+      "question": "How do I make my website responsive?",
+      "answer": "Use relative units (%, em, rem), CSS media queries, flexible layouts (Flexbox, Grid), and mobile-first design approach."
+    }
+  ]
+}

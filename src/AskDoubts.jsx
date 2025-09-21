@@ -39,7 +39,7 @@ function AskDoubts() {
       <NavBar />
       <div className="container">
         <div className="wrapper ask-doubts-wrapper">
-          <h1>Ask Your Doubt</h1>
+          <h1>Have any questions?</h1>
           <form onSubmit={handleAskDoubt}>
             <div className="input-box">
               <input
